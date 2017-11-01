@@ -7,24 +7,32 @@ $data = [
     4 => 3,
     5 => 9
 ];
- //var_dump($data);
-
-function atas(array $arr) 
+ //var_dump(count($data));
+ 
+function getMinMax($arr)
 {
-    $hasil = (array_keys($arr,max($arr)));
-    foreach($hasil as $item ){
-        return $item;
+    $count_arr = count($arr);
+    $min = $max = $arr[0];
+    $nilaiMin;
+    $nilaiMax;
+
+    for ($x = 1; $x < $count_arr; $x++){
+        if ($min > $arr[$x]){
+            $min = $arr[$x];
+        }
+        if ($max < $arr[$x] ){
+            $max = $arr[$x];
+        }
     }
+     return array(
+            'ArrayMin' => $min,
+            'ArrayMax' => $max,
+    );
 }
 
-function bawah (array $arr)
-{
-    $hasil = (array_keys($arr, min($arr)));
-    foreach ($hasil as $item) {
-        return $item;
-    }
-}
+print_r(getMinMax($data));
 
-echo 'waktu yg tepat untuk jual rujak : jam ' . atas($data) . PHP_EOL;
-echo '' . PHP_EOL;
-echo 'waktu yang tepat untuk beli rujak : jam ' . bawah($data) . PHP_EOL;
+
+//echo 'waktu yg tepat untuk jual rujak : jam ' . atas($data) . PHP_EOL;
+//echo '' . PHP_EOL;
+//echo 'waktu yang tepat untuk beli rujak : jam ' . bawah($data) . PHP_EOL;
