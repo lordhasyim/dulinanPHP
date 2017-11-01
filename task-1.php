@@ -13,7 +13,6 @@ function atas(array $arr)
 {
     $hasil = (array_keys($arr,max($arr)));
     foreach($hasil as $item ){
-        //echo $item . PHP_EOL;
         return $item;
     }
 }
